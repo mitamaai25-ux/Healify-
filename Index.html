@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Healify — Mental Wellness</title>
+  <meta name="description" content="Healify — compassionate mental health resources, self-care tools, and accessible support." />
+  <link rel="icon" href="data:," />
+  <style>
+    /* ---------- Reset & basics ---------- */
+    :root{
+      --bg:#f6fbfb;
+      --card:#ffffff;
+      --accent:#6c63ff;
+      --muted:#6b7280;
+      --success:#10b981;
+      --radius:16px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color-scheme: light;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,#f6fbfb 0%, #eef7ff 100%);
+      color:#0f172a;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding:24px;
+    }
+    a{color:var(--accent); text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* ---------- Layout ---------- */
+    .container{max-width:1100px;margin:0 auto}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#4f46e5);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;box-shadow:0 8px 20px rgba(99,102,241,0.12)}
+    nav a{margin-left:18px;font-weight:600;color:rgba(15,23,42,0.8)}
+
+    main{margin-top:28px}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
+    .hero-card{background:var(--card);padding:28px;border-radius:var(--radius);box-shadow:0 10px 30px rgba(2,6,23,0.06)}
+    .hero h1{font-size:36px;margin:0 0 8px}
+    .hero p.lead{color:var(--muted);margin:0 0 18px}
+    .cta{display:inline-block;padding:12px 18px;border-radius:12px;background:var(--accent);color:white;font-weight:700}
+
+    /* ---------- Services / Cards ---------- */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:22px}
+    .card{background:var(--card);padding:18px;border-radius:14px;box-shadow:0 6px 18px rgba(2,6,23,0.04)}
+    .card h3{margin:6px 0 8px}
+    .muted{color:var(--muted)}
+
+    /* ---------- Resources & CTA ---------- */
+    .resources{display:flex;gap:18px;margin-top:20px}
+    .resources .left{flex:2}
+    .resources .right{flex:1}
+
+    /* ---------- Footer ---------- */
+    footer{margin-top:32px;padding:20px;border-radius:12px;background:linear-gradient(180deg, rgba(99,102,241,0.06), rgba(99,102,241,0.03));display:flex;justify-content:space-between;align-items:center}
+
+    /* ---------- Contact form ---------- */
+    form{display:grid;gap:10px}
+    input,textarea,button,select{font:inherit;padding:10px;border-radius:10px;border:1px solid #e6eef6}
+    textarea{min-height:110px;resize:vertical}
+    .note{font-size:13px;color:var(--muted)}
+
+    /* ---------- Responsive ---------- */
+    @media (max-width:920px){
+      .hero{grid-template-columns:1fr}
+      nav{display:none}
+      header{flex-direction:column;align-items:flex-start;gap:12px}
+    }
+
+    /* ---------- Test UI ---------- */
+    .test-box{margin-top:18px;padding:12px;border-radius:10px;background:#fff;border:1px dashed #e6eef6}
+    .test-box pre{margin:0;white-space:pre-wrap;font-size:13px}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">H</div>
+        <div>
+          <div style="font-weight:800">Healify</div>
+          <div class="muted" style="font-size:12px">Compassionate mental wellness</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#services">Support</a>
+        <a href="#resources">Resources</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero-card" role="region" aria-label="Introduction">
+          <h1 id="hero-heading">You are not alone — small steps, steady healing</h1>
+          <p class="lead">Healify is a supportive space offering tools, resources, and guided practices to help with anxiety, low mood, stress, and burnout. We believe in gentle, evidence-informed care and community connection.</p>
+          <div style="display:flex;gap:12px;align-items:center">
+            <a class="cta" href="#contact">Get Support</a>
+            <a href="#resources" class="muted">Explore self-help resources →</a>
+          </div>
+
+          <div class="grid" style="margin-top:18px">
+            <div class="card">
+              <strong>Guided Exercises</strong>
+              <div class="muted">Breathing, grounding, and short meditations (5–15 min).</div>
+            </div>
+            <div class="card">
+              <strong>Peer Stories</strong>
+              <div class="muted">Real experiences from those who healed and are healing.</div>
+            </div>
+            <div class="card">
+              <strong>Quick Tools</strong>
+              <div class="muted">Mood tracker, sleep tips, and journaling prompts.</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Quick mood check">
+          <h2 style="margin-top:0">Quick mood check</h2>
+          <p class="muted">Select how you feel right now — we'll suggest a short activity.</p>
+          <!-- NOTE: removed inline onclick attributes to avoid global execution order issues -->
+          <form id="mood-form" aria-label="Mood check form">
+            <select id="mood" aria-label="Select mood">
+              <option value="calm">Calm / okay</option>
+              <option value="anxious">Anxious / worried</option>
+              <option value="sad">Sad / low</option>
+              <option value="stressed">Stressed / overwhelmed</option>
+            </select>
+            <button id="mood-suggest-btn" type="submit" style="margin-top:8px" class="cta">Suggest</button>
+            <p id="mood-suggestion" class="muted" style="margin-top:10px"></p>
+          </form>
+        </aside>
+      </section>
+
+      <section id="about" style="margin-top:22px">
+        <div class="card">
+          <h2 style="margin-top:0">About Healify</h2>
+          <p class="muted">Healify was created to provide accessible mental health tools and community resources. Our approach mixes guided self-help, curated readings, and signposting to professional services when needed. We center safety, confidentiality, and trauma-informed language.</p>
+
+          <div class="grid" style="margin-top:14px">
+            <div class="card">
+              <h3>Values</h3>
+              <p class="muted">Compassion • Evidence-informed • Inclusive</p>
+            </div>
+            <div class="card">
+              <h3>Safety</h3>
+              <p class="muted">If you are in immediate danger, please contact local emergency services. Our site is not a crisis hotline.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" style="margin-top:22px">
+        <h2>Support & Services</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Self-help programs</h3>
+            <p class="muted">4–6 week guided programs for anxiety, sleep, and stress management.</p>
+          </div>
+          <div class="card">
+            <h3>Community groups</h3>
+            <p class="muted">Moderated peer meetups and creative groups (writing, art, music).</p>
+          </div>
+          <div class="card">
+            <h3>Professional signposting</h3>
+            <p class="muted">We help you find licensed therapists, crisis lines, and local services.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="resources" style="margin-top:24px">
+        <div class="resources">
+          <div class="left card">
+            <h3 style="margin-top:0">Resources & Tools</h3>
+            <ul>
+              <li class="muted">Mood tracker — quick daily checkins.</li>
+              <li class="muted">Sleep hygiene checklist.</li>
+              <li class="muted">5-minute grounding exercises.</li>
+              <li class="muted">Journal prompts and creative coping ideas.</li>
+            </ul>
+            <p class="note">All resources are educational and not a substitute for professional diagnosis or treatment.</p>
+          </div>
+
+          <aside class="right card">
+            <h4 style="margin-top:0">Featured</h4>
+            <p class="muted">Article: Understanding Anxiety — small practical changes you can try today.</p>
+            <img src="https://picsum.photos/seed/healify/400/250" alt="abstract calming illustration" style="border-radius:10px;margin-top:10px" />
+          </aside>
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:24px">
+        <div class="card">
+          <h2 style="margin-top:0">Contact & Support</h2>
+          <p class="muted">Fill this form to request more information or to book a support call. We aim to respond within a few business days. (This demo includes a sample backend snippet below.)</p>
+
+          <form id="contact-form" autocomplete="on">
+            <label class="note">Name<input name="name" required placeholder="Your name" /></label>
+            <label class="note">Email<input name="email" type="email" required placeholder="you@example.com" /></label>
+            <label class="note">How can we help?<textarea name="message" required placeholder="Tell us briefly..."></textarea></label>
+            <div style="display:flex;gap:8px;align-items:center;justify-content:space-between">
+              <button type="submit" class="cta">Send request</button>
+              <div id="contact-result" class="muted"></div>
+            </div>
+          </form>
+
+          <!-- Test area for debugging -->
+          <div class="test-box" aria-hidden="false">
+            <strong>Self-check tests (visible for debugging)</strong>
+            <pre id="test-output">Tests not run yet.</pre>
+            <button id="run-tests" style="margin-top:8px;" class="cta" type="button">Run quick tests</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>
+        <strong>Healify</strong>
+        <div class="muted">Privacy-first • Trauma-informed • Non-judgmental</div>
+      </div>
+      <div class="muted">© Healify — available as a demo. If you're in crisis, call your local emergency number.</div>
+    </footer>
+  </div>
+
+  <script>
+    /*
+      Fix summary:
+      - Removed any use of document.write (none present before) and removed inline onclick attributes
+      - Wrapped logic in DOMContentLoaded so elements are present before code runs
+      - Replaced inline onclick with event listeners to avoid accidental global references
+      - Added a small test harness (Run quick tests) to exercise key functions and make debugging easier
+      - Defensive coding: safe defaults and try/catch blocks
+    */
+
+    document.addEventListener('DOMContentLoaded', function(){
+      // ---------- Utilities ----------
+      function getSuggestionForMood(mood){
+        const map = {
+          calm: "Nice — try a 5-minute mindful breathing exercise or write one sentence about what you're grateful for.",
+          anxious: "Try box-breathing: inhale 4s, hold 4s, exhale 4s, hold 4s — repeat for 2–3 minutes. Ground with 5 things you can see.",
+          sad: "A gentle grounding: hold a warm cup, play a comforting song, or write a short letter to yourself (no need to send).",
+          stressed: "Try a short movement break — stretch for 3 minutes, then list 3 small tasks you can complete now."
+        };
+        return map[mood] || 'Take a short break and breathe — little steps add up.';
+      }
+
+      // ---------- Mood form handlers ----------
+      var moodForm = document.getElementById('mood-form');
+      var moodSelect = document.getElementById('mood');
+      var moodOut = document.getElementById('mood-suggestion');
+
+      function handleMoodEvent(e){
+        if(e && e.preventDefault) e.preventDefault();
+        try{
+          var moodValue = moodSelect && moodSelect.value ? moodSelect.value : '';
+          moodOut.textContent = getSuggestionForMood(moodValue);
+        }catch(err){
+          console.error('handleMoodEvent error', err);
+          moodOut.textContent = 'Something went wrong — try again.';
+        }
+      }
+
+      if(moodForm){
+        moodForm.addEventListener('submit', handleMoodEvent);
+      }
+
+      // ---------- Contact form handler (demo) ----------
+      var contactForm = document.getElementById('contact-form');
+      var contactResult = document.getElementById('contact-result');
+
+      if(contactForm){
+        contactForm.addEventListener('submit', async function(ev){
+          ev.preventDefault();
+          contactResult.textContent = 'Sending...';
+
+          // collect values safely
+          var name = (contactForm.elements['name'] && contactForm.elements['name'].value) || contactForm.querySelector('input[name="name"]').value || '';
+          var email = (contactForm.elements['email'] && contactForm.elements['email'].value) || contactForm.querySelector('input[name="email"]').value || '';
+          var message = (contactForm.elements['message'] && contactForm.elements['message'].value) || contactForm.querySelector('textarea[name="message"]').value || '';
+
+          var payload = { name: name.trim(), email: email.trim(), message: message.trim() };
+
+          try{
+            // In case there's no backend, this will likely fail — that's expected for the demo.
+            const res = await fetch('/api/contact', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            });
+
+            if(res.ok){
+              contactResult.textContent = 'Thanks — we received your request.';
+              contactForm.reset();
+            } else {
+              const txt = await res.text().catch(()=>null);
+              contactResult.textContent = 'Error: ' + (txt || res.statusText || 'Unknown error');
+            }
+          }catch(err){
+            // Most common case for a local demo without a backend
+            console.warn('Contact submit failed (expected in demo):', err);
+            contactResult.textContent = 'Could not send — this is a demo. Check console for details.';
+          }
+        });
+      }
+
+      // ---------- Quick test harness ----------
+      var testOutput = document.getElementById('test-output');
+      var runTestsBtn = document.getElementById('run-tests');
+
+      function runQuickTests(){
+        var results = [];
+        try{
+          // test 1: mood suggestions mapping
+          var cases = [ ['calm', 'Nice'], ['anxious', 'Try box-breathing'], ['sad', 'A gentle grounding'], ['stressed', 'Try a short movement'] ];
+          cases.forEach(function(c){
+            var got = getSuggestionForMood(c[0]);
+            var pass = typeof got === 'string' && got.indexOf(c[1]) === 0;
+            results.push((pass ? 'PASS' : 'FAIL') + ': mood->' + c[0] + ' => ' + got);
+          });
+
+          // test 2: DOM handlers (simulate)
+          moodSelect.value = 'anxious';
+          handleMoodEvent();
+          var displayed = moodOut.textContent || '';
+          results.push((displayed.indexOf('box-breathing') > -1 ? 'PASS' : 'FAIL') + ': handleMoodEvent DOM update -> ' + displayed);
+
+        }catch(err){
+          results.push('ERROR running tests: ' + (err && err.message ? err.message : String(err)));
+        }
+
+        testOutput.textContent = results.join('\n');
+      }
+
+      if(runTestsBtn){
+        runTestsBtn.addEventListener('click', runQuickTests);
+      }
+
+      // Expose a safe debug API on window for advanced debugging (no eval, no writes)
+      window.HealifyDebug = {
+        getSuggestionForMood: getSuggestionForMood,
+        runQuickTests: runQuickTests
+      };
+    });
+
+  </script>
+
+  <!--
+    ---------------- Backend (Node + Express) ----------------
+    Save the following as server.js at your project root. This is a minimal example for demo purposes only.
+
+    // server.js
+    const express = require('express');
+    const path = require('path');
+    const bodyParser = require('body-parser');
+    const nodemailer = require('nodemailer'); // optional
+
+    const app = express();
+    app.use(express.static(path.join(__dirname, 'public'))); // serve the HTML file from /public
+    app.use(bodyParser.json());
+
+    // basic contact endpoint (do not use in production without validation & rate-limiting)
+    app.post('/api/contact', (req, res) =>{
+      const {name,email,message} = req.body || {};
+      if(!name || !email || !message) return res.status(400).send('Missing fields');
+
+      // Example: save to file, db, or send email via nodemailer
+      console.log('Contact request', {name,email,message});
+
+      // respond back
+      return res.status(200).json({ok:true});
+    });
+
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, ()=> console.log('Server listening on', PORT));
+
+    ---------------------------------------------------------------------
+    Notes & safety:
+    - This is a demo site. Add input validation, sanitization, and rate-limiting before production.
+    - Provide clear crisis resources on visible places (we included a footer note). If the user is in crisis, display emergency contact info for their country.
+    - If you want a React version, Tailwind integration, or an admin dashboard to view contact submissions, tell me and I will create it.
+  -->
+</body>
+</html>
