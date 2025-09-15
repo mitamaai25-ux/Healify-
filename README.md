@@ -1,2 +1,2 @@
-# Healify-
+# Healify
 Mental health website
